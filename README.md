@@ -4,6 +4,8 @@
 
 <br>
 
+## New install scripts for [Windows](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/config/install.cmd) and [Linux/macOS](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/config/install.sh) !!
+
 # 🧠 Roo Code Memory Bank
 
 **Persistent Project Context for AI-Assisted Development**
@@ -47,18 +49,31 @@ graph LR
 
 ### 1. Configure Custom Instructions
 
-#### a. Copy Rule and Mode Files
-Download and copy these files to your project's **root** directory:
-| Mode | Rule File | Purpose |
-|------|-----------|----------|
-| Code | [`.clinerules-code`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-code) | Implementation and coding tasks |
-| Architect | [`.clinerules-architect`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-architect) | System design and architecture |
-| Ask | [`.clinerules-ask`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-ask) | Information and assistance |
-| Debug | [`.clinerules-debug`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-debug) | Troubleshooting and problem-solving |
-| Test | [`.clinerules-test`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-test) | Test-driven development and quality assurance |
-| Mode | [`.roomodes`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.roomodes) | Custom mode configuration file for Test mode |
+The easiest way to set up the necessary configuration files is using the provided install scripts.
 
-> 📝 **Special Note for Test Mode**: Test mode requires both the [`.clinerules-test`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.clinerules-test) file AND [`.roomodes`](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/.roomodes) file in your project root for proper functionality.
+#### a. Download and Run Install Script
+
+1.  **Open your terminal** and navigate (`cd`) to your project's **root directory**.
+2.  **Download the appropriate script** for your operating system:
+    *   **Windows (Command Prompt or PowerShell):**
+        ```bash
+        curl -L -o install.cmd https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.cmd
+        ```
+    *   **Linux / macOS (bash/zsh):**
+        ```bash
+        curl -L -o install.sh https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.sh
+        ```
+3.  **Run the downloaded script:**
+    *   **Windows:**
+        ```cmd
+        .\install.cmd
+        ```
+    *   **Linux / macOS:**
+        ```bash
+        chmod +x install.sh
+        bash install.sh
+        ```
+    The script will download the necessary `.clinerules-*` and `.roomodes` files into your project root and then attempt to delete itself.
 
 #### b. Configure Roo Code Prompt Settings
 > ⚠️ **Important**: The system default descriptions in the Role Definition boxes can remain but leave the Mode-specific Custom Instructions boxes empty.  
@@ -83,12 +98,13 @@ Create a `projectBrief.md` in your project root **before** initialization to giv
 
 ```
 project-root/
-├── .clinerules-architect
-├── .clinerules-code
-├── .clinerules-ask
-├── .clinerules-debug
-├── .clinerules-test
-├── .roomodes
+├── config/
+│   ├── .clinerules-architect
+│   ├── .clinerules-code
+│   ├── .clinerules-ask
+│   ├── .clinerules-debug
+│   ├── .clinerules-test
+│   └── .roomodes
 ├── memory-bank/
 │   ├── activeContext.md
 │   ├── productContext.md
