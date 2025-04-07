@@ -55,26 +55,16 @@ graph LR
 #### Download and Run Install Script
 
 1.  **Open your terminal** and navigate (`cd`) to your project's **root directory**.
-2.  **Download the appropriate script** for your operating system:
+2.  **Download and run the appropriate script** for your operating system using one of the commands below:
     *   **Windows (Command Prompt or PowerShell):**
-        ```bash
-        curl -L -o install.cmd https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.cmd
+        ```cmd
+        curl -L -o install.cmd https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.cmd && cmd /c install.cmd
         ```
     *   **Linux / macOS (bash/zsh):**
         ```bash
-        curl -L -o install.sh https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.sh
+        curl -L -o install.sh https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.sh && chmod +x install.sh && bash install.sh
         ```
-3.  **Run the downloaded script:**
-    *   **Windows:**
-        ```cmd
-        .\install.cmd
-        ```
-    *   **Linux / macOS:**
-        ```bash
-        chmod +x install.sh
-        bash install.sh
-        ```
-    The script will download the necessary `.clinerules-*` and `.roomodes` files into your project root and then attempt to delete itself.
+    The script will download the necessary `.roorules-*`, `.roomodes`, and helper files into your project root, inject the workspace path into `.roorules-test`, and then attempt to delete the installation and helper scripts.
 
 #### b. Configure Roo Code Prompt Settings
 > ⚠️ **Important**: The system default descriptions in the Role Definition boxes can remain but leave the Mode-specific Custom Instructions boxes empty.  
