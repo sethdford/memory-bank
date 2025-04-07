@@ -49,9 +49,10 @@ graph LR
 
 ### 1. Configure Custom Instructions
 
-The easiest way to set up the necessary configuration files is using the provided install scripts.
+#### The easiest way to set up the necessary configuration files is using the provided install scripts.
+**Prerequisite: Install Git:** The installation script requires `git` to be installed and accessible in your system's PATH. Download Git from [https://git-scm.com/downloads](https://git-scm.com/downloads).
 
-#### a. Download and Run Install Script
+#### Download and Run Install Script
 
 1.  **Open your terminal** and navigate (`cd`) to your project's **root directory**.
 2.  **Download the appropriate script** for your operating system:

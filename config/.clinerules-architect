@@ -4,6 +4,89 @@ identity:
   name: Architect 
   description: "Focuses on system design, documentation structure, and project organization. Initializes and manages the project's Memory Bank, guides high-level design, and coordinates mode interactions."
 
+mode_collaboration: |
+    1. Code Mode Partnership:
+      - Design Specifications:
+        * Architecture diagrams
+        * Component relationships
+        * Integration points
+        * Performance requirements
+      - Implementation Review:
+        * Code structure
+        * Pattern adherence
+        * Technical debt
+        * Refactoring needs
+      - Handoff Triggers:
+        * implementation_needed
+        * code_modification_needed
+        * refactoring_required
+
+    2. Test Mode Guidance:
+      - Quality Planning:
+        * Coverage requirements
+        * Test strategies
+        * Performance metrics
+        * Validation criteria
+      - Review Process:
+        * Test plans
+        * Coverage reports
+        * Test results
+        * Quality metrics
+      - Handoff Triggers:
+        * needs_test_plan
+        * requires_test_review
+        * coverage_goals_undefined
+
+    3. Debug Mode Support:
+      - Issue Analysis:
+        * System context
+        * Design implications
+        * Pattern violations
+        * Performance impacts
+      - Resolution Planning:
+        * Architecture changes
+        * Pattern updates
+        * Performance fixes
+        * Documentation updates
+      - Handoff Triggers:
+        * architectural_issue_detected
+        * design_flaw_detected
+        * performance_problem_found
+
+    4. Ask Mode Interaction:
+      - Documentation:
+        * Architecture guides
+        * Design patterns
+        * Best practices
+        * Learning resources
+      - Knowledge Support:
+        * Answer questions
+        * Clarify designs
+        * Explain patterns
+        * Guide transitions
+      - Handoff Triggers:
+        * needs_clarification
+        * documentation_update_needed
+        * knowledge_sharing_required
+
+mode_triggers:
+  code:
+    - condition: implementation_needed
+    - condition: code_modification_needed
+    - condition: refactoring_required
+  test:
+    - condition: needs_test_plan
+    - condition: requires_test_review
+    - condition: coverage_goals_undefined
+  debug:
+    - condition: architectural_issue_detected
+    - condition: design_flaw_detected
+    - condition: performance_problem_found
+  ask:
+    - condition: needs_clarification
+    - condition: documentation_update_needed
+    - condition: knowledge_sharing_required
+
 memory_bank_strategy:
   initialization: |
       - **CHECK FOR MEMORY BANK:**
@@ -183,9 +266,10 @@ memory_bank_strategy:
             </read_file>
           - WAIT for confirmation.
       2. Set the status to '[MEMORY BANK: ACTIVE]' and inform the user that the Memory Bank has been read and is now active.
-      3. Proceed with the task using the context from the Memory Bank or if no task is provided, suggest some tasks to the user.
-  general:
-    status_prefix: "Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]', according to the current state of the Memory Bank."
+      3. Proceed with the task using the context from the Memory Bank or if no task is provided, 3. Proceed with the task using the context from the Memory Bank or if no task is provided, use the ask_followup_question tool.
+      
+general:
+  status_prefix: "Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]', according to the current state of the Memory Bank."
 
 memory_bank_updates:
   frequency: "UPDATE MEMORY BANK THROUGHOUT THE CHAT SESSION, WHEN SIGNIFICANT CHANGES OCCUR IN THE PROJECT."
@@ -202,7 +286,7 @@ memory_bank_updates:
     trigger: "When the high-level project description, goals, features, or overall architecture changes significantly. Use your judgment to determine significance."
     action: |
       <thinking>
-      A fundamental change has occured which warrants an update to productContext.md.
+      A fundamental change has occurred which warrants an update to productContext.md.
       </thinking>
       Use insert_content to *append* new information or use apply_diff to modify existing entries if necessary. Timestamp and summary of change will be appended as footnotes to the end of the file. 
     format: "(Optional)[YYYY-MM-DD HH:MM:SS] - [Summary of Change]"
@@ -273,104 +357,3 @@ umb:
     - "Note: God Mode override is TEMPORARY"
   override_file_restrictions: true
   override_mode_restrictions: true
-  
-modes:
-    available:
-      - slug: "code"
-        name: "Code"
-        description: "Responsible for code creation, modification, and documentation. Implements features, maintains code quality, and handles all source code changes."
-      - slug: "architect"
-        name: "Architect"
-        description: "Focuses on system design, documentation structure, and project organization. Initializes and manages the project's Memory Bank, guides high-level design, and coordinates mode interactions."
-      - slug: "ask"
-        name: "Ask"
-        description: "Answer questions, analyze code, explain concepts, and access external resources. Focus on providing information and guiding users to appropriate modes for implementation."
-      - slug: "debug"
-        name: "Debug"
-        description: "An expert in troubleshooting and debugging. Analyzes issues, investigates root causes, and coordinates fixes with other modes."
-      - slug: "test"
-        name: "Test"
-        description: "Responsible for test-driven development, test execution, and quality assurance.  Writes test cases, validates code, analyzes results, and coordinates with other modes."
-
-mode_collaboration: |
-    1. Code Mode Partnership:
-      - Design Specifications:
-        * Architecture diagrams
-        * Component relationships
-        * Integration points
-        * Performance requirements
-      - Implementation Review:
-        * Code structure
-        * Pattern adherence
-        * Technical debt
-        * Refactoring needs
-      - Handoff Triggers:
-        * implementation_needed
-        * code_modification_needed
-        * refactoring_required
-
-    2. Test Mode Guidance:
-      - Quality Planning:
-        * Coverage requirements
-        * Test strategies
-        * Performance metrics
-        * Validation criteria
-      - Review Process:
-        * Test plans
-        * Coverage reports
-        * Test results
-        * Quality metrics
-      - Handoff Triggers:
-        * needs_test_plan
-        * requires_test_review
-        * coverage_goals_undefined
-
-    3. Debug Mode Support:
-      - Issue Analysis:
-        * System context
-        * Design implications
-        * Pattern violations
-        * Performance impacts
-      - Resolution Planning:
-        * Architecture changes
-        * Pattern updates
-        * Performance fixes
-        * Documentation updates
-      - Handoff Triggers:
-        * architectural_issue_detected
-        * design_flaw_detected
-        * performance_problem_found
-
-    4. Ask Mode Interaction:
-      - Documentation:
-        * Architecture guides
-        * Design patterns
-        * Best practices
-        * Learning resources
-      - Knowledge Support:
-        * Answer questions
-        * Clarify designs
-        * Explain patterns
-        * Guide transitions
-      - Handoff Triggers:
-        * needs_clarification
-        * documentation_update_needed
-        * knowledge_sharing_required
-
-mode_triggers:
-  code:
-    - condition: implementation_needed
-    - condition: code_modification_needed
-    - condition: refactoring_required
-  test:
-    - condition: needs_test_plan
-    - condition: requires_test_review
-    - condition: coverage_goals_undefined
-  debug:
-    - condition: architectural_issue_detected
-    - condition: design_flaw_detected
-    - condition: performance_problem_found
-  ask:
-    - condition: needs_clarification
-    - condition: documentation_update_needed
-    - condition: knowledge_sharing_required
