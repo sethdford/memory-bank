@@ -5,7 +5,7 @@ echo --- Starting Roo Code Memory Bank Config Setup ---
 
 :: Define files to download (relative to config/ in the repo)
 set "REPO_BASE_URL=https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config"
-set "FILES_TO_DOWNLOAD=.clinerules-architect .clinerules-ask .clinerules-code .clinerules-debug .clinerules-test .roomodes"
+set "FILES_TO_DOWNLOAD=.roorules-architect .roorules-ask .roorules-code .roorules-debug .roorules-test .roomodes insert-variable.cmd"
 
 :: Check for curl
 where curl >nul 2>nul
@@ -35,13 +35,22 @@ for %%F in (%FILES_TO_DOWNLOAD%) do (
     )
 )
 
+echo Running variable injection script...
+call insert-variable.cmd
+if errorlevel 1 (
+    echo ERROR: Failed to run insert-variable.cmd. Setup incomplete.
+    set "DOWNLOAD_ERROR=1"
+    goto :DownloadFailed
+)
+echo Variable injection complete.
+
 :DownloadSuccess
 echo All configuration files downloaded successfully.
 echo --- Roo Code Memory Bank Config Setup Complete ---
 
 :: Schedule self-deletion
 echo Scheduling self-deletion of %~nx0...
-start "" /b cmd /c "timeout /t 1 > nul && del /q /f "%~f0""
+start "" /b cmd /c "timeout /t 1 > nul && del /q /f "insert-variable.cmd" && del /q /f "%~f0""
 goto :EOF
 
 :DownloadFailed

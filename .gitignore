@@ -1,10 +1,10 @@
 .vscode
 /memory-bank
 .rooignore
-.clinerules-architect
-.clinerules-ask
-.clinerules-code
-.clinerules-debug
-.clinerules-test
+.roorules-architect
+.roorules-ask
+.roorules-code
+.roorules-debug
+.roorules-test
 .roomodes
 !/config/*

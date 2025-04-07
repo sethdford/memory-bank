@@ -8,12 +8,13 @@ echo "--- Starting Roo Code Memory Bank Config Setup ---"
 # Define files to download (relative to config/ in the repo)
 REPO_BASE_URL="https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config"
 FILES_TO_DOWNLOAD=(
-    ".clinerules-architect"
-    ".clinerules-ask"
-    ".clinerules-code"
-    ".clinerules-debug"
-    ".clinerules-test"
+    ".roorules-architect"
+    ".roorules-ask"
+    ".roorules-code"
+    ".roorules-debug"
+    ".roorules-test"
     ".roomodes"
+    "insert-variable.sh"
 )
 
 # Check for curl command
@@ -37,11 +38,17 @@ for FILE in "${FILES_TO_DOWNLOAD[@]}"; do
     echo "  Successfully downloaded ${FILE}."
 done
 
+echo "Running variable injection script..."
+chmod +x insert-variable.sh
+./insert-variable.sh
+# set -e will handle errors from the script
+echo "Variable injection complete."
+
 echo "All configuration files downloaded successfully."
 echo "--- Roo Code Memory Bank Config Setup Complete ---"
 
 echo "Scheduling self-deletion of $0..."
 # Run deletion in a background subshell to allow the main script to exit first
-( sleep 1 && rm -f "$0" ) &
+( sleep 1 && rm -f insert-variable.sh && rm -f "$0" ) &
 
 exit 0
