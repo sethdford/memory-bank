@@ -105,15 +105,15 @@ mode_triggers:
 
 memory_bank_strategy:
   initialization: |
+      <thinking>
       - **CHECK FOR MEMORY BANK:**
+      </thinking>
           <thinking>
         * First, check if the memory-bank/ directory exists.
           </thinking>
-          <list_files>
-          <path>.</path>
-          <recursive>false</recursive>
-          </list_files>
+          <thinking>
         * If memory-bank DOES exist, skip immediately to `if_memory_bank_exists`.
+          </thinking>
   if_no_memory_bank: |
       1. **Inform the User:**  
           "No Memory Bank was found. I recommend creating one to  maintain project context. Would you like to switch to Architect mode to do this?"
@@ -124,44 +124,22 @@ memory_bank_strategy:
           </thinking>
           a. Inform the user that the Memory Bank will not be created.
           b. Set the status to '[MEMORY BANK: INACTIVE]'.
-          c. Proceed with the task using the current context if needed or if no task is provided, suggest some tasks to the user.
+          c. Proceed with the task using the current context if needed or if no task is provided, use the ask_followup_question tool.
          * If the user agrees:
-          <switch_mode>
-          <mode_slug>architect</mode_slug>
-          <reason>To initialize the Memory Bank.</reason>
-          </switch_mode>
+          Switch to Architect mode to create the Memory Bank.
   if_memory_bank_exists: |
-      1. **READ *ALL* MEMORY BANK FILES**
-          <thinking>
-          I will read all memory bank files, one at a time, and wait for confirmation after each one.
-          </thinking>
-        a. **MANDATORY:** Read `productContext.md`:
-            <read_file>
-            <path>memory-bank/productContext.md</path>
-            </read_file>
-          - WAIT for confirmation.
-        b. **MANDATORY:** Read `activeContext.md`:
-            <read_file>
-            <path>memory-bank/activeContext.md</path>
-            </read_file>
-          - WAIT for confirmation.
-        c. **MANDATORY:** Read `systemPatterns.md`:
-            <read_file>
-            <path>memory-bank/systemPatterns.md</path>
-            </read_file>
-          - WAIT for confirmation.
-        d. **MANDATORY:** Read `decisionLog.md`:
-            <read_file>
-            <path>memory-bank/decisionLog.md</path>
-            </read_file>
-          - WAIT for confirmation.
-        e. **MANDATORY:** Read `progress.md`:
-            <read_file>
-            <path>memory-bank/progress.md</path>
-            </read_file>
-          - WAIT for confirmation.
-      2. Set the status to '[MEMORY BANK: ACTIVE]' and inform the user that the Memory Bank has been read and is now active.
-      3. Proceed with the task using the context from the Memory Bank or if no task is provided, use the ask_followup_question tool.
+        **READ *ALL* MEMORY BANK FILES**
+        <thinking>
+        I will read all memory bank files, one at a time.
+        </thinking>
+        Plan: Read all mandatory files sequentially.
+        1. Read `productContext.md`
+        2. Read `activeContext.md` 
+        3. Read `systemPatterns.md` 
+        4. Read `decisionLog.md` 
+        5. Read `progress.md` 
+        6. Set status to [MEMORY BANK: ACTIVE] and inform user.
+        7. Proceed with the task using the context from the Memory Bank or if no task is provided, use the ask_followup_question tool.
       
 general:
   status_prefix: "Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]', according to the current state of the Memory Bank."
