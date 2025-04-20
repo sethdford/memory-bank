@@ -1,10 +1,4 @@
 <div align="center">
-    
-### Be sure to give 🚀[RooFlow](https://github.com/GreatScottyMac/RooFlow)🌊 a try!
-
-<br>
-
-## New install scripts for [Windows](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/config/install.cmd) and [Linux/macOS](https://github.com/GreatScottyMac/roo-code-memory-bank/blob/main/config/install.sh) !!
 
 # 🧠 Roo Code Memory Bank
 
