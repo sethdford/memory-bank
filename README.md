@@ -44,7 +44,7 @@ graph LR
 
 1. Open the Roo Code Prompts settings.
 2. Select the mode to modify.
-3. Copy/Paste the contents of the corresponding memory_bank_strategy_[mode].yml file.
+3. Copy/Paste the contents of the corresponding [memory_bank_strategy_[mode].yml](https://github.com/GreatScottyMac/roo-code-memory-bank/tree/main/modules) file.
 4. Save the changes. 
 
 <img src="https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/images/prompt_settings.png" alt="prompt_settings.png" width="300"/>
