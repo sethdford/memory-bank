@@ -27,7 +27,6 @@ graph LR
     C --> I[Code]
     C --> J[Ask]
     C --> K1[Debug]
-    C --> K2[Test]
     K[Real-time Updates] --> B
     K --> L[Continuous Sync]
     L --> M[Auto-save]
@@ -41,27 +40,14 @@ graph LR
 
 ## 🚀 Quick Start
 
-### 1. Configure Custom Instructions
+### 1. Mode-specific Custom Instructions
 
-#### The easiest way to set up the necessary configuration files is using the provided install scripts.
-**Prerequisite: Install Git:** The installation script requires `git` to be installed and accessible in your system's PATH. Download Git from [https://git-scm.com/downloads](https://git-scm.com/downloads).
+1. Open the Roo Code Prompts settings.
+2. Select the mode to modify.
+3. Copy/Paste the contents of the corresponding memory_bank_strategy_[mode].yml file.
+4. Save the changes. 
 
-#### Download and Run Install Script
-
-1.  **Open your terminal** and navigate (`cd`) to your project's **root directory**.
-2.  **Download and run the appropriate script** for your operating system using one of the commands below:
-    *   **Windows (Command Prompt or PowerShell):**
-        ```cmd
-        curl -L -o install.cmd https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.cmd && cmd /c install.cmd
-        ```
-    *   **Linux / macOS (bash/zsh):**
-        ```bash
-        curl -L -o install.sh https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config/install.sh && chmod +x install.sh && bash install.sh
-        ```
-    The script will download the necessary `.roorules-*`, `.roomodes`, and helper files into your project root, inject the workspace path into `.roorules-test`, and then attempt to delete the installation and helper scripts.
-
-#### b. Configure Roo Code Prompt Settings
-> ⚠️ **Important**: The system default descriptions in the Role Definition boxes can remain but leave the Mode-specific Custom Instructions boxes empty.  
+<img src="https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/images/prompt_settings.png" alt="prompt_settings.png" width="300"/>
 
 ### 2. Initialize Memory Bank
 
@@ -83,18 +69,11 @@ Create a `projectBrief.md` in your project root **before** initialization to giv
 
 ```
 project-root/
-├── config/
-│   ├── .clinerules-architect
-│   ├── .clinerules-code
-│   ├── .clinerules-ask
-│   ├── .clinerules-debug
-│   ├── .clinerules-test
-│   └── .roomodes
 ├── memory-bank/
 │   ├── activeContext.md
 │   ├── productContext.md
 │   ├── progress.md
-│   └── decisionLog.md
+│   └── decisionLog.md  
 └── projectBrief.md
 ```
 
@@ -142,25 +121,6 @@ graph TD
 - Remembers project details across sessions
 - Maintains consistent understanding of your codebase
 - Tracks decisions and their rationale
-
-### 🔄 Smart Workflows
-```mermaid
-graph LR
-    A[Architect Mode] -->|Real-time Design Updates| B[Memory Bank]
-    C[Code Mode] -->|Real-time Implementation| B
-    D[Ask Mode] -->|Real-time Insights| B
-    F[Debug Mode] -->|Real-time Analysis| B
-    G[Test Mode] -->|Real-time Testing| B
-    B -->|Instant Context| A
-    B -->|Instant Context| C
-    B -->|Instant Context| D
-    B -->|Instant Context| F
-    B -->|Instant Context| G
-    E[Event Monitor] -->|Continuous Sync| B
-```
-- Mode-based operation for specialized tasks
-- Automatic context switching
-- Project-specific customization via rules
 
 ### 📊 Knowledge Management
 - Structured documentation with clear purposes
@@ -329,46 +289,6 @@ Switch to Debug mode when you need to:
 - Find root causes
 - Verify fixes
 - Document problems
-
-### Test Mode
-Roo Code Memory Bank includes a powerful Test mode for test-driven development and quality assurance. This mode operates with a focus on test creation, execution, and validation while maintaining code quality.
-
-#### Key Capabilities
-- 🧪 **Test-Driven Development**: Write tests before implementation
-- 📊 **Test Execution**: Run and monitor test suites
-- 🔍 **Coverage Analysis**: Track and improve test coverage
-- 🎯 **Quality Assurance**: Validate code against requirements
-- ✅ **Test Result Management**: Track and report test outcomes
-
-#### Real-time Update Triggers
-Test mode actively monitors and updates Memory Bank files based on:
-- 🔄 Test executions and results
-- 📈 Coverage metrics and gaps
-- 🐛 Test failure patterns
-- ✨ New test requirements
-- 📝 Test documentation needs
-
-#### Memory Bank Integration
-```mermaid
-graph TD
-    A[Test Mode] --> B[Test Creation]
-    A --> C[Test Execution]
-    B --> D[Memory Bank Updates]
-    C --> D
-    D --> E[activeContext.md]
-    D --> F[progress.md]
-    D --> G[decisionLog.md]
-    E --> H[Test Status]
-    F --> I[Test Progress]
-    G --> J[Test Decisions]
-```
-
-Switch to Test mode when you need to:
-- Write new tests
-- Run test suites
-- Analyze test coverage
-- Validate code quality
-- Document test results
 
 ### Session Management
 - ⚡ **Real-time Updates**: Memory Bank automatically stays synchronized with your work
