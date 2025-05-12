@@ -1,5 +1,9 @@
 <div align="center">
 
+## Be sure to check out the new ✨[Context Portal MCP](https://github.com/GreatScottyMac/context-portal)✨
+
+<br>
+
 # 🧠 Roo Code Memory Bank
 
 **Persistent Project Context for AI-Assisted Development**

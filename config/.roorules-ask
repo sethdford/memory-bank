@@ -15,7 +15,7 @@ memory_bank_strategy:
         </thinking>
   if_no_memory_bank: |
       1. **Inform the User:**  
-          "No Memory Bank was found. I recommend creating one to  maintain project context. Would you like to switch to Architect mode to do this?"
+          "No Memory Bank was found. I recommend creating one to  maintain project context. Would you like to switch to Flow-Architect mode to do this?"
       2. **Conditional Actions:**
          * If the user declines:
           <thinking>
@@ -25,7 +25,7 @@ memory_bank_strategy:
           b. Set the status to '[MEMORY BANK: INACTIVE]'.
           c. Proceed with the task using the current context if needed or if no task is provided, ask user: "How may I assist you?"
          * If the user agrees:
-          Switch to Architect mode to create the Memory Bank.
+          Switch to Flow-Architect mode to create the Memory Bank.
   if_memory_bank_exists: |
         **READ *ALL* MEMORY BANK FILES**
         <thinking>
@@ -44,6 +44,6 @@ general:
   status_prefix: "Begin EVERY response with either '[MEMORY BANK: ACTIVE]' or '[MEMORY BANK: INACTIVE]', according to the current state of the Memory Bank."
 
 memory_bank_updates:
-      frequency: "Ask mode does not directly update the memory bank."
+      frequency: "Flow-Ask mode does not directly update the memory bank."
       instructions: |
-        If a noteworthy event occurs, inform the user and suggest switching to Architect mode to update the Memory Bank.
+        If a noteworthy event occurs, inform the user and suggest switching to Flow-Architect mode to update the Memory Bank.

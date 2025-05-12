@@ -11,7 +11,7 @@ memory_bank_strategy:
           </thinking>
   if_no_memory_bank: |
       1. **Inform the User:**  
-          "No Memory Bank was found. I recommend creating one to  maintain project context. Would you like to switch to Architect mode to do this?"
+          "No Memory Bank was found. I recommend creating one to  maintain project context. Would you like to switch to Flow-Architect mode to do this?"
       2. **Conditional Actions:**
          * If the user declines:
           <thinking>
@@ -19,9 +19,9 @@ memory_bank_strategy:
           </thinking>
           a. Inform the user that the Memory Bank will not be created.
           b. Set the status to '[MEMORY BANK: INACTIVE]'.
-          c. Proceed with the task using the current context if needed or if no task is provided, use the `ask_followup_question` tool.
+          c. Proceed with the task using the current context if needed or if no task is provided, use the `ask_followup_question` tool .
          * If the user agrees:
-          Switch to Architect mode to create the Memory Bank.
+          Switch to Flow-Architect mode to create the Memory Bank.
   if_memory_bank_exists: |
         **READ *ALL* MEMORY BANK FILES**
         <thinking>
@@ -48,7 +48,7 @@ memory_bank_updates:
       <thinking>
       I need to update decisionLog.md with a decision, the rationale, and any implications. 
       </thinking>
-      Use append_to_file to *append* new information. Never overwrite existing entries. Always include a timestamp.  
+      Use insert_content to *append* new information. Never overwrite existing entries. Always include a timestamp.  
     format: |
       "[YYYY-MM-DD HH:MM:SS] - [Summary of Change/Focus/Issue]"
   productContext.md:
@@ -57,7 +57,7 @@ memory_bank_updates:
       <thinking>
       A fundamental change has occurred which warrants an update to productContext.md.
       </thinking>
-      Use append_to_file to *append* new information or use apply_diff to modify existing entries if necessary. Timestamp and summary of change will be appended as footnotes to the end of the file.
+      Use insert_content to *append* new information or use apply_diff to modify existing entries if necessary. Timestamp and summary of change will be appended as footnotes to the end of the file.
     format: "[YYYY-MM-DD HH:MM:SS] - [Summary of Change]"
   systemPatterns.md:
     trigger: "When new architectural patterns are introduced or existing ones are modified. Use your judgement."
@@ -65,7 +65,7 @@ memory_bank_updates:
       <thinking>
       I need to update systemPatterns.md with a brief summary and time stamp.
       </thinking>
-      Use append_to_file to *append* new patterns or use apply_diff to modify existing entries if warranted. Always include a timestamp.
+      Use insert_content to *append* new patterns or use apply_diff to modify existing entries if warranted. Always include a timestamp.
     format: "[YYYY-MM-DD HH:MM:SS] - [Description of Pattern/Change]"
   activeContext.md:
     trigger: "When the current focus of work changes, or when significant progress is made. Use your judgement."
@@ -73,7 +73,7 @@ memory_bank_updates:
       <thinking>
       I need to update activeContext.md with a brief summary and time stamp.
       </thinking>
-      Use append_to_file to *append* to the relevant section (Current Focus, Recent Changes, Open Questions/Issues) or use apply_diff to modify existing entries if warranted.  Always include a timestamp.
+      Use insert_content to *append* to the relevant section (Current Focus, Recent Changes, Open Questions/Issues) or use apply_diff to modify existing entries if warranted.  Always include a timestamp.
     format: "[YYYY-MM-DD HH:MM:SS] - [Summary of Change/Focus/Issue]"
   progress.md:
       trigger: "When a task begins, is completed, or if there are any changes Use your judgement."
@@ -81,7 +81,7 @@ memory_bank_updates:
         <thinking>
         I need to update progress.md with a brief summary and time stamp.
         </thinking>
-        Use append_to_file to *append* the new entry, never overwrite existing entries. Always include a timestamp.
+        Use insert_content to *append* the new entry, never overwrite existing entries. Always include a timestamp.
       format: "[YYYY-MM-DD HH:MM:SS] - [Summary of Change/Focus/Issue]"
 
 umb:

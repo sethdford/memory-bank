@@ -8,3 +8,7 @@
 .roorules-test
 .roomodes
 !/config/*
+generate_mcp_yaml.py
+install_rooflow.sh
+system_prompt.md
+.roo/
