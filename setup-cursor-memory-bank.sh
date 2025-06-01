@@ -73,7 +73,7 @@ create_project_structure() {
         mkdir -p memory-bank
         
         # Create template files
-        cat > memory-bank/activeContext.md << 'EOF'
+        cat > memory-bank/activeContext.md << EOF
 # Active Context
 
 ## Current Session Goals
@@ -89,7 +89,7 @@ create_project_structure() {
 - Setting up Roo Code Memory Bank to work with Cursor's custom mode feature
 EOF
 
-        cat > memory-bank/productContext.md << 'EOF'
+        cat > memory-bank/productContext.md << EOF
 # Product Context
 
 ## Project Overview
@@ -112,7 +112,7 @@ EOF
 - **Workflow**: Using Cursor custom modes for persistent context across sessions
 EOF
 
-        cat > memory-bank/progress.md << 'EOF'
+        cat > memory-bank/progress.md << EOF
 # Progress Tracking
 
 ## Completed Work
@@ -131,7 +131,7 @@ EOF
 - None currently
 EOF
 
-        cat > memory-bank/decisionLog.md << 'EOF'
+        cat > memory-bank/decisionLog.md << EOF
 # Decision Log
 
 ## Architectural Decisions
@@ -148,7 +148,7 @@ EOF
   - **Reasoning**: Native integration with Cursor, mode-specific tool access, structured workflows
 EOF
 
-        cat > memory-bank/systemPatterns.md << 'EOF'
+        cat > memory-bank/systemPatterns.md << EOF
 # System Patterns
 
 ## Memory Bank Workflow Patterns

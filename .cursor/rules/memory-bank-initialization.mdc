@@ -1,7 +1,7 @@
 ---
 description: 
 globs: 
-alwaysApply: false
+alwaysApply: true
 ---
 ---
 description: Memory Bank initialization and management for Cursor custom modes. This rule ensures consistent memory bank directory structure and file creation across all Memory Bank custom modes.
