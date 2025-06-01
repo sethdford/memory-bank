@@ -1,0 +1,149 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Memory Bank initialization and management for Cursor custom modes. This rule ensures consistent memory bank directory structure and file creation across all Memory Bank custom modes.
+globs: 
+alwaysApply: false
+---
+
+# Memory Bank Initialization for Cursor Custom Modes
+
+## Critical Rules
+
+- **Always check for memory-bank/ directory existence** before proceeding with any memory bank operations
+- **Create complete directory structure** if memory-bank/ doesn't exist:
+  - memory-bank/activeContext.md
+  - memory-bank/productContext.md
+  - memory-bank/progress.md
+  - memory-bank/decisionLog.md
+  - memory-bank/systemPatterns.md
+- **Initialize with proper file templates** including frontmatter and basic structure
+- **Maintain consistent timestamp format** [YYYY-MM-DD HH:MM:SS] for all updates
+- **Status indicators** must be used in all Memory Bank custom modes:
+  - '[MEMORY BANK: ARCHITECT]' for architect mode
+  - '[MEMORY BANK: ACTIVE]' for code mode when files exist
+  - '[MEMORY BANK: INACTIVE]' for code mode when files don't exist
+  - '[MEMORY BANK: DEBUG]' for debug mode
+  - '[MEMORY BANK: UPDATING]' for update mode
+
+## Memory Bank File Templates
+
+### activeContext.md Template
+```markdown
+# Active Context
+
+## Current Session Goals
+- [Current objectives and tasks]
+
+## Recent Changes
+- [YYYY-MM-DD HH:MM:SS] - [Summary of change]
+
+## Open Questions/Issues
+- [Outstanding questions or blockers]
+
+## Session Context
+- [Any relevant session-specific information]
+```
+
+### productContext.md Template
+```markdown
+# Product Context
+
+## Project Overview
+- **Purpose**: [Project description]
+- **Goals**: [Main objectives]
+- **Scope**: [What's included/excluded]
+
+## Technical Architecture
+- **Stack**: [Technology choices]
+- **Components**: [Main system components]
+- **Dependencies**: [Key dependencies]
+
+## Standards & Conventions
+- **Code Style**: [Coding standards]
+- **Documentation**: [Documentation requirements]
+- **Testing**: [Testing approach]
+```
+
+### progress.md Template
+```markdown
+# Progress Tracking
+
+## Completed Work
+- [YYYY-MM-DD HH:MM:SS] - [Completed task description]
+
+## Current Tasks
+- [YYYY-MM-DD HH:MM:SS] - [Current task description]
+
+## Next Steps
+- [Planned upcoming tasks]
+
+## Known Issues
+- [YYYY-MM-DD HH:MM:SS] - [Issue description and status]
+```
+
+### decisionLog.md Template
+```markdown
+# Decision Log
+
+## Architectural Decisions
+- [YYYY-MM-DD HH:MM:SS] - [Decision summary]
+  - **Context**: [Why this decision was needed]
+  - **Decision**: [What was decided]
+  - **Rationale**: [Reasoning behind decision]
+  - **Implications**: [Expected impact]
+
+## Technical Choices
+- [YYYY-MM-DD HH:MM:SS] - [Technology/implementation choice]
+  - **Alternatives**: [Other options considered]
+  - **Selection**: [Chosen approach]
+  - **Reasoning**: [Why this choice was made]
+```
+
+### systemPatterns.md Template
+```markdown
+# System Patterns
+
+## Code Patterns
+- [YYYY-MM-DD HH:MM:SS] - [Pattern description]
+  - **Usage**: [When to use this pattern]
+  - **Implementation**: [How to implement]
+  - **Examples**: [Code examples]
+
+## Architecture Patterns
+- [YYYY-MM-DD HH:MM:SS] - [Architectural pattern]
+  - **Context**: [When this pattern applies]
+  - **Structure**: [How it's organized]
+  - **Benefits**: [Why this pattern is used]
+```
+
+## Examples
+
+<example>
+**Memory Bank Architect Mode Initialization:**
+```
+[MEMORY BANK: ARCHITECT]
+
+I've detected that no memory-bank/ directory exists. Let me initialize the Memory Bank system for this project.
+
+Creating memory-bank/ directory structure...
+✓ memory-bank/activeContext.md
+✓ memory-bank/productContext.md  
+✓ memory-bank/progress.md
+✓ memory-bank/decisionLog.md
+✓ memory-bank/systemPatterns.md
+
+Memory Bank initialized successfully. You can now switch to other Memory Bank modes for development work.
+```
+</example>
+
+<example type="invalid">
+**Incorrect - Missing status indicator:**
+```
+I see you want to initialize the memory bank. Let me create the files...
+(Missing '[MEMORY BANK: ARCHITECT]' status indicator)
+```
+</example>

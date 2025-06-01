@@ -1,6 +1,10 @@
 <div align="center">
 
-## Be sure to check out the new ✨[Context Portal MCP](https://github.com/GreatScottyMac/context-portal)✨
+## 🚀 NEW: Cursor Custom Modes Integration!
+
+Check out the revolutionary **[Cursor Custom Modes Integration](CURSOR-INTEGRATION.md)** - bringing Memory Bank to Cursor's new custom mode feature with specialized AI assistants for different development tasks!
+
+Also check out the new ✨[Context Portal MCP](https://github.com/GreatScottyMac/context-portal)✨
 
 <br>
 
@@ -43,6 +47,25 @@ graph LR
 - ⚡ **Real-time Updates**: Continuous context synchronization
 
 ## 🚀 Quick Start
+
+### For Cursor Users: New Custom Modes Integration! 🎉
+
+**Want the ultimate AI development experience?** Try our new **[Cursor Custom Modes Integration](CURSOR-INTEGRATION.md)**:
+
+```bash
+git clone https://github.com/GreatScottyMac/roo-code-memory-bank.git
+cd roo-code-memory-bank  
+./setup-cursor-memory-bank.sh
+```
+
+Get specialized AI assistants with keyboard shortcuts:
+- 🏗️ Architect (`⌘⇧A`) - System design & initialization
+- 💻 Code (`⌘⇧C`) - Implementation with full context  
+- ❓ Ask (`⌘⇧?`) - Information & guidance
+- 🐛 Debug (`⌘⇧D`) - Context-aware troubleshooting
+- 🔄 Update (`⌘⇧U`) - Session synchronization
+
+### Original Roo Code Integration
 
 ### 1. Mode-specific Custom Instructions
 
