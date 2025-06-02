@@ -1,8 +1,8 @@
-# 🧠 Roo Code Memory Bank + Cursor Custom Modes
+# 🧠 Memory Bank + Cursor Custom Modes
 
 **Revolutionary AI-Assisted Development with Persistent Context**
 
-This integration brings the powerful Roo Code Memory Bank system to Cursor's new custom mode feature, providing seamless persistent context across development sessions with specialized AI assistants for different development tasks.
+This integration brings the powerful Memory Bank system to Cursor's new custom mode feature, providing seamless persistent context across development sessions with specialized AI assistants for different development tasks.
 
 ## 🎯 What This Integration Provides
 
@@ -31,7 +31,7 @@ This integration brings the powerful Roo Code Memory Bank system to Cursor's new
    ```bash
    git clone https://github.com/GreatScottyMac/roo-code-memory-bank.git
    cd roo-code-memory-bank
-   ./setup-cursor-memory-bank.sh
+   ./scripts/setup-cursor-memory-bank.sh
    ```
 
 2. **Verify Installation**
@@ -226,10 +226,10 @@ memory-bank/
 3. Verify timestamp formats are correct
 4. Ensure proper mode usage
 
-## 🆚 Comparison with Original Roo Code
+## 🆚 Comparison with Original Memory Bank
 
-| Feature | Original Roo Code | Cursor Custom Modes |
-|---------|------------------|-------------------|
+| Feature | Original Memory Bank | Cursor Custom Modes |
+|---------|---------------------|-------------------|
 | **Context Persistence** | ✅ Full | ✅ Enhanced |
 | **Mode Switching** | ✅ Manual | ✅ Automatic + Shortcuts |
 | **Tool Access Control** | ❌ Limited | ✅ Mode-specific |
@@ -239,17 +239,22 @@ memory-bank/
 
 ## 🤝 Contributing
 
-This integration builds on the excellent foundation of the original Roo Code Memory Bank system. Contributions are welcome for:
+This integration builds on the excellent foundation of the original Memory Bank system. Contributions are welcome for:
 
-- Additional custom modes
-- Enhanced memory bank templates
-- Improved workflow patterns
-- Better documentation
+- New mode configurations
+- Enhanced memory bank patterns
+- Documentation improvements
+- Integration with other AI tools
+
+**Resources:**
+- [Original Memory Bank Documentation](README.md)
+- [GitHub Copilot Integration](#github-copilot-integration)
+- [Developer Guide](developer-primer.md)
 
 ## 📚 Further Reading
 
-- [Original Roo Code Memory Bank](README.md)
-- [Developer Primer](developer-primer.md)
+- [Original Memory Bank Documentation](README.md)
+- [Developer Guide](developer-primer.md)
 - [Cursor Custom Modes Documentation](https://docs.cursor.com/chat/custom-modes)
 - [Project Brief](projectBrief.md)
 
@@ -257,4 +262,4 @@ This integration builds on the excellent foundation of the original Roo Code Mem
 
 **Ready to revolutionize your AI-assisted development workflow?** 
 
-Start with `./setup-cursor-memory-bank.sh` and experience persistent context like never before! 🚀 
+Start with `./scripts/setup-cursor-memory-bank.sh` and experience persistent context like never before! 🚀 

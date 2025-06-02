@@ -1,7 +1,7 @@
 @echo off
 setlocal
 
-echo --- Starting Roo Code Memory Bank Config Setup ---
+echo --- Starting Memory Bank Config Setup ---
 
 :: Define files to download (relative to config/ in the repo)
 set "REPO_BASE_URL=https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config"
@@ -46,7 +46,7 @@ echo Variable injection complete.
 
 :DownloadSuccess
 echo All configuration files downloaded successfully.
-echo --- Roo Code Memory Bank Config Setup Complete ---
+echo --- Memory Bank Config Setup Complete ---
 
 :: Schedule self-deletion
 echo Scheduling self-deletion of %~nx0...

@@ -3,7 +3,7 @@
 # Exit immediately if a command exits with a non-zero status.
 set -e
 
-echo "--- Starting Roo Code Memory Bank Config Setup ---"
+echo "--- Starting Memory Bank Config Setup ---"
 
 # Define files to download (relative to config/ in the repo)
 REPO_BASE_URL="https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/config"
@@ -45,7 +45,7 @@ chmod +x insert-variable.sh
 echo "Variable injection complete."
 
 echo "All configuration files downloaded successfully."
-echo "--- Roo Code Memory Bank Config Setup Complete ---"
+echo "--- Memory Bank Config Setup Complete ---"
 
 echo "Scheduling self-deletion of $0..."
 # Run deletion in a background subshell to allow the main script to exit first

@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Roo Code Memory Bank - Cursor Custom Modes Setup Script
+# Memory Bank - Cursor Custom Modes Setup Script
 # Integrates the Memory Bank system with Cursor's custom mode feature
 
 set -e
 
-echo "🧠 Roo Code Memory Bank - Cursor Custom Modes Setup"
+echo "🧠 Memory Bank - Cursor Custom Modes Setup"
 echo "=================================================="
 
 # Check if we're in a directory with .cursor folder or create it
@@ -86,7 +86,7 @@ create_project_structure() {
 - None currently
 
 ## Session Context
-- Setting up Roo Code Memory Bank to work with Cursor's custom mode feature
+- Setting up Memory Bank to work with Cursor's custom mode feature
 EOF
 
         cat > memory-bank/productContext.md << EOF
@@ -137,7 +137,7 @@ EOF
 ## Architectural Decisions
 - [$(date '+%Y-%m-%d %H:%M:%S')] - Memory Bank Integration Decision
   - **Context**: Need for persistent project context across Cursor sessions
-  - **Decision**: Implement Roo Code Memory Bank with Cursor custom modes
+  - **Decision**: Implement Memory Bank with Cursor custom modes
   - **Rationale**: Provides structured approach to maintaining context and project knowledge
   - **Implications**: Enables consistent AI assistance and project understanding across sessions
 

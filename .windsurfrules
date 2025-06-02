@@ -1,0 +1,73 @@
+# Memory Bank Integration Rules for Windsurf/Cascade
+
+## Core Protocol
+ALWAYS read and reference these Memory Bank files for complete project context:
+- memory-bank/activeContext.md (current session goals and status)
+- memory-bank/productContext.md (project overview and architecture)
+- memory-bank/decisionLog.md (architectural decisions and rationale)
+- memory-bank/progress.md (completed work and next steps)
+- memory-bank/systemPatterns.md (coding patterns and standards)
+
+## Memory Bank Management
+- Update memory-bank files automatically during development
+- When making significant changes, update relevant Memory Bank files
+- Include rationale for architectural decisions in decisionLog.md
+- Track progress and completed work in progress.md
+- Maintain current patterns in systemPatterns.md
+
+## Trigger Commands
+- "Update Memory Bank" or "UMB" = Comprehensive sync of all Memory Bank files
+- "Initialize Memory Bank" = Create Memory Bank structure if missing
+- "Review Memory Bank" = Analyze current Memory Bank state and suggest improvements
+
+## Code Generation Standards
+- Prioritize readability and maintainability
+- Follow established patterns from systemPatterns.md
+- Consider architectural constraints from decisionLog.md
+- Align with project goals from productContext.md
+- Include comprehensive error handling
+- Add appropriate tests for new functionality
+- Update documentation when adding new features
+
+## Memory Bank File Updates
+When updating Memory Bank files:
+1. Use timestamps for all updates: [YYYY-MM-DD HH:MM:SS]
+2. Be specific and detailed in descriptions
+3. Cross-reference between files when relevant
+4. Maintain consistency across all Memory Bank files
+5. Focus on actionable information
+
+## Session Management
+- Start each session by reading all Memory Bank files
+- Update activeContext.md with current session goals
+- End sessions by updating progress.md with completed work
+- Document any architectural decisions made during the session
+
+## Project Context Awareness
+- Always consider existing architectural decisions before suggesting changes
+- Reference established patterns when generating new code
+- Align suggestions with project goals and constraints
+- Maintain consistency with existing codebase patterns
+
+## Development Workflow
+1. Read Memory Bank files for context
+2. Understand current session goals from activeContext.md
+3. Follow established patterns from systemPatterns.md
+4. Make code changes following project standards
+5. Update relevant Memory Bank files with progress
+6. Document any decisions made during development
+
+## Quality Standards
+- Ensure all code follows project conventions
+- Include proper error handling and logging
+- Add comprehensive tests for new features
+- Update documentation for public APIs
+- Consider performance and security implications
+- Follow accessibility guidelines where applicable
+
+## Communication Style
+- Be concise but comprehensive in Memory Bank updates
+- Use clear, actionable language
+- Include context for future reference
+- Cross-reference related Memory Bank entries
+- Maintain professional but conversational tone

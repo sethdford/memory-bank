@@ -8,18 +8,19 @@ Also check out the new ✨[Context Portal MCP](https://github.com/GreatScottyMac
 
 <br>
 
-# 🧠 Roo Code Memory Bank
+# 🧠 Memory Bank
 
 **Persistent Project Context for AI-Assisted Development**
 
 [![VS Code Extension](https://img.shields.io/badge/VS%20Code-Extension-blue.svg)](https://github.com/RooVetGit/Roo-Code)
+[![GitHub Copilot](https://img.shields.io/badge/GitHub%20Copilot-Compatible-green.svg)](https://github.com/features/copilot)
 [![GitHub](https://img.shields.io/badge/View%20on-GitHub-lightgrey.svg)](https://github.com/GreatScottyMac/roo-code-memory-bank)
 
 </div>
 
 ## 🎯 Overview
 
-Roo Code Memory Bank solves a critical challenge in AI-assisted development: **maintaining context across sessions**. By providing a structured memory system integrated with VS Code, it ensures your AI assistant maintains a deep understanding of your project across sessions.
+Memory Bank solves a critical challenge in AI-assisted development: **maintaining context across sessions**. By providing a structured memory system that integrates with VS Code, Cursor, and GitHub Copilot, it ensures your AI assistant maintains a deep understanding of your project across sessions and memory resets.
 
 ### Key Components
 
@@ -27,7 +28,7 @@ Roo Code Memory Bank solves a critical challenge in AI-assisted development: **m
 graph LR
     A[Memory Bank] --> B[Core Files]
     A --> C[Mode Rules]
-    A --> D[VS Code UI]
+    A --> D[AI Integration]
     B --> E[Project Context]
     B --> F[Decisions]
     B --> G[Progress]
@@ -35,27 +36,46 @@ graph LR
     C --> I[Code]
     C --> J[Ask]
     C --> K1[Debug]
+    D --> L[Cursor Custom Modes]
+    D --> M[GitHub Copilot]
+    D --> N[VS Code Extensions]
     K[Real-time Updates] --> B
-    K --> L[Continuous Sync]
-    L --> M[Auto-save]
-    L --> N[Event Tracking]
+    K --> O[Continuous Sync]
+    O --> P[Auto-save]
+    O --> Q[Event Tracking]
 ```
 
 - 🧠 **Memory Bank**: Persistent storage for project knowledge
 - 📋 **Mode Rules**: YAML-based behavior configuration
-- 🔧 **VS Code Integration**: Seamless development experience
+- 🔧 **Multi-IDE Integration**: Cursor, VS Code, GitHub Copilot support
 - ⚡ **Real-time Updates**: Continuous context synchronization
 
 ## 🚀 Quick Start
 
-### For Cursor Users: New Custom Modes Integration! 🎉
+### Universal Setup (Recommended) ✨
 
-**Want the ultimate AI development experience?** Try our new **[Cursor Custom Modes Integration](CURSOR-INTEGRATION.md)**:
+**New to Memory Bank?** Start with our interactive setup:
 
 ```bash
 git clone https://github.com/GreatScottyMac/roo-code-memory-bank.git
 cd roo-code-memory-bank  
-./setup-cursor-memory-bank.sh
+./scripts/setup-memory-bank.sh
+```
+
+Choose from:
+- 🏗️ **Cursor Custom Modes** - Specialized AI assistants
+- 🤖 **GitHub Copilot Integration** - Enhanced VS Code experience
+- 🏄 **Windsurf Integration** - Cascade AI with persistent context
+- 🚀 **All Integrations** - Complete Memory Bank experience
+
+### For Cursor Users: Custom Modes Integration! 🎉
+
+**Want the ultimate AI development experience?** Try our **[Cursor Custom Modes Integration](CURSOR-INTEGRATION.md)**:
+
+```bash
+git clone https://github.com/GreatScottyMac/roo-code-memory-bank.git
+cd roo-code-memory-bank  
+./scripts/setup-cursor-memory-bank.sh
 ```
 
 Get specialized AI assistants with keyboard shortcuts:
@@ -65,22 +85,56 @@ Get specialized AI assistants with keyboard shortcuts:
 - 🐛 Debug (`⌘⇧D`) - Context-aware troubleshooting
 - 🔄 Update (`⌘⇧U`) - Session synchronization
 
-### Original Roo Code Integration
+### For GitHub Copilot Users: Enhanced Context! ✨
+
+**Already using GitHub Copilot?** Enhance it with Memory Bank context:
+
+```bash
+git clone https://github.com/GreatScottyMac/roo-code-memory-bank.git
+cd your-project
+../roo-code-memory-bank/scripts/setup-github-copilot.sh
+```
+
+Get enhanced AI development with:
+- 📝 **Repository Custom Instructions** - Project context for Copilot
+- ⚙️ **VS Code Workspace Settings** - Enhanced code generation
+- 📁 **Sample Prompt Templates** - Reusable patterns
+- 🔄 **Commit Message Integration** - Context-aware commits
+
+[Learn more about GitHub Copilot integration →](GITHUB-COPILOT-INTEGRATION.md)
+
+### For Windsurf Users: Cascade AI Integration! 🏄
+
+**Want agentic AI development?** Try our **[Windsurf Integration](WINDSURF-INTEGRATION.md)**:
+
+```bash
+git clone https://github.com/GreatScottyMac/roo-code-memory-bank.git
+cd your-project
+../roo-code-memory-bank/scripts/setup-windsurf.sh
+```
+
+Get enhanced development with:
+- 📝 **Windsurf Rules** - Custom behavior for Cascade AI
+- 🧠 **Persistent Context** - Project memory across sessions
+- 🔄 **Automatic Updates** - Real-time Memory Bank maintenance
+- 🎯 **Trigger Commands** - Easy Memory Bank operations
+
+[Learn more about Windsurf integration →](WINDSURF-INTEGRATION.md)
+
+### Original VS Code Integration
 
 ### 1. Mode-specific Custom Instructions
 
-1. Open the Roo Code Prompts settings.
+1. Open the extension prompts settings.
 2. Select the mode to modify.
 3. Copy/Paste the contents of the corresponding [memory_bank_strategy_"mode".yml](https://github.com/GreatScottyMac/roo-code-memory-bank/tree/main/modules) file.
 4. Save the changes. 
 
-<img src="https://raw.githubusercontent.com/GreatScottyMac/roo-code-memory-bank/main/images/prompt_settings.png" alt="prompt_settings.png" width="300"/>
-
 ### 2. Initialize Memory Bank
 
-1. Switch to **Architect** or **Code** mode in Roo Code chat
+1. Switch to **Architect** or **Code** mode in your AI chat
 2. Send a message (e.g., "hello")
-3. Roo will automatically:
+3. The AI will automatically:
    - 🔍 Scan for `memory-bank/` directory
    - 📁 Create it if missing (with your approval)
    - 📝 Initialize core files
@@ -89,7 +143,7 @@ Get specialized AI assistants with keyboard shortcuts:
 <details>
 <summary>💡 Pro Tip: Project Brief</summary>
 
-Create a `projectBrief.md` in your project root **before** initialization to give Roo immediate project context.
+Create a `projectBrief.md` in your project root **before** initialization to give your AI immediate project context.
 </details>
 
 ### File Organization
@@ -341,3 +395,80 @@ Switch to Debug mode when you need to:
 ## License
 
 Apache 2.0 © 2025 [GreatScottyMac](LICENSE)
+
+## 🤝 GitHub Copilot Integration
+
+Memory Bank seamlessly integrates with GitHub Copilot to provide enhanced context and better code generation. Here's how to set it up:
+
+### 1. Repository Custom Instructions
+
+Create a `.github/copilot-instructions.md` file in your project root:
+
+```bash
+# Add to your .github/copilot-instructions.md
+echo "
+# Memory Bank Integration
+
+This project uses Memory Bank for persistent context across AI sessions.
+
+## Context Files
+- Read memory-bank/activeContext.md for current session goals and status
+- Check memory-bank/productContext.md for project overview and architecture
+- Review memory-bank/decisionLog.md for architectural decisions and rationale
+- Consult memory-bank/progress.md for completed work and next steps
+
+## Coding Standards
+- Follow patterns documented in memory-bank/systemPatterns.md
+- Reference established conventions in productContext.md
+- Maintain consistency with existing architectural decisions
+
+## Memory Bank Updates
+- When making significant changes, suggest updates to relevant memory bank files
+- Include rationale for architectural decisions in decisionLog.md
+- Track progress and completed work in progress.md
+" >> .github/copilot-instructions.md
+```
+
+### 2. Workspace Configuration
+
+Add Memory Bank settings to your VS Code workspace settings:
+
+```json
+{
+  "github.copilot.chat.codeGeneration.instructions": [
+    {
+      "file": "./memory-bank/productContext.md"
+    },
+    {
+      "file": "./memory-bank/systemPatterns.md"
+    }
+  ],
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "text": "Reference memory-bank/progress.md for context. Include relevant task IDs and feature descriptions."
+    }
+  ]
+}
+```
+
+### 3. Enhanced Workflows
+
+With Memory Bank + GitHub Copilot, you get:
+
+- **Context-Aware Code Generation**: Copilot understands your project's patterns and decisions
+- **Consistent Architecture**: References established patterns from systemPatterns.md
+- **Informed Commit Messages**: Leverages progress tracking for meaningful commits
+- **Decision Continuity**: Maintains architectural consistency across sessions
+
+### 4. Best Practices
+
+1. **Initialize Memory Bank First**: Set up your memory bank structure before configuring Copilot
+2. **Keep Instructions Updated**: Regular sync between memory bank files and custom instructions
+3. **Reference in Prompts**: Explicitly mention memory bank files in your Copilot prompts
+4. **Collaborative Context**: Share memory bank patterns across your team
+
+Example Copilot prompt:
+```
+Generate a new API endpoint following the patterns in memory-bank/systemPatterns.md 
+and considering the architecture decisions in memory-bank/decisionLog.md
+```

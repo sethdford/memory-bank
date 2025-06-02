@@ -1,4 +1,4 @@
-# Roo Code Memory Bank: Developer Primer
+# Memory Bank: Developer Primer
 
 ## 🏗️ System Architecture
 
@@ -21,7 +21,7 @@ flowchart TD
     C --> C3[Ask Mode]
     C --> C4[Debug Mode]
     
-    D --> D1[.clinerules Files]
+    D --> D1[Custom Instructions]
     D --> D2[Mode Switching]
     D --> D3[Tool Access]
     
@@ -384,32 +384,32 @@ Memory Bank for Refactoring: Complex Code Module
 
 Memory Bank Initialization: Quick Workflow
 
-The Memory Bank initialization is largely automatic. Here’s a simplified view of the process:
+The Memory Bank initialization is largely automatic. Here's a simplified view of the process:
 
-1. **Start in Architect or Code Mode:** When you open a new project in VS Code and switch to Architect or Code mode, Roo Code automatically checks for a `memory-bank/`.
-2. **Initialization Plan:** If `memory-bank/` is missing, Roo Code (in Architect mode) will guide you with a plan to set it up.
-3. **Switch to Code Mode:** Follow Roo's prompt to switch to Code mode.
-4. **Create Memory Bank Files:** In Code mode, follow Roo's plan to create the `memory-bank/` directory and the necessary files.
+1. **Start in Architect or Code Mode:** When you open a new project in VS Code and switch to Architect or Code mode, Memory Bank automatically checks for a `memory-bank/`.
+2. **Initialization Plan:** If `memory-bank/` is missing, Memory Bank (in Architect mode) will guide you with a plan to set it up.
+3. **Switch to Code Mode:** Follow Memory Bank's prompt to switch to Code mode.
+4. **Create Memory Bank Files:** In Code mode, follow Memory Bank's plan to create the `memory-bank/` directory and the necessary files.
 5. **Memory Bank Ready:** Once files are created, your Memory Bank is initialized and ready for use.
 
 
 Handling Multiple Projects in a Workspace
 
 
-If you have multiple projects with their own Memory Banks within your VS Code workspace, Roo Code can automatically detect them and prompt you to select the target project for the current chat session.
+If you have multiple projects with their own Memory Banks within your VS Code workspace, Memory Bank can automatically detect them and prompt you to select the target project for the current chat session.
 
 Handling Multiple Projects in a Workspace
 
 
-If you have multiple projects with their own Memory Banks within your VS Code workspace, Roo Code can automatically detect them and prompt you to select the target project for the current chat session.
+If you have multiple projects with their own Memory Banks within your VS Code workspace, Memory Bank can automatically detect them and prompt you to select the target project for the current chat session.
 
 
 Automatic Project Detection and Selection:
 
 
-1. New Chat Session: When you start a new chat session in Architect or Code mode, Roo Code scans your workspace for `memory-bank/` directories.
-2. Multiple Memory Banks Found: If multiple `memory-bank/` directories are detected, Roo Code will display a prompt in the chat asking you to choose the project you want to work on.
-3. Project Selection Prompt: Roo Code will display a prompt asking you to choose your project.  It will look something like this in the chat:
+1. New Chat Session: When you start a new chat session in Architect or Code mode, Memory Bank scans your workspace for `memory-bank/` directories.
+2. Multiple Memory Banks Found: If multiple `memory-bank/` directories are detected, Memory Bank will display a prompt in the chat asking you to choose the project you want to work on.
+3. Project Selection Prompt: Memory Bank will display a prompt asking you to choose your project.  It will look something like this in the chat:
 
 ```text
 Multiple Memory Banks detected.
@@ -423,13 +423,13 @@ Please select the project for this session:
 Enter the number of your project choice.
 ```
 4. Select Your Project: Enter the number corresponding to the project you want to work with and press Enter.
-5. Context Loaded: Roo Code will then load the Memory Bank for the selected project and use it for the current chat session.
+5. Context Loaded: Memory Bank will then load the Memory Bank for the selected project and use it for the current chat session.
 
 Example Scenario: Multi-Project Workspace
 
 Let's say you have a workspace with multiple projects, like `webapp` and `mobile-app`, each with its own `memory-bank/` directory.
 
-When you initiate a new chat in Architect mode, Roo Code will detect both Memory Banks and ask you to select the project you want to focus on for this session. The prompt will look similar to the example below:
+When you initiate a new chat in Architect mode, Memory Bank will detect both Memory Banks and ask you to select the project you want to focus on for this session. The prompt will look similar to the example below:
 
 ```text
 Multiple Memory Banks detected.
@@ -441,9 +441,9 @@ Please select the project for this session:
 
 Enter the number of your project choice.
 ```
-By choosing '1', Roo Code will then use the Memory Bank from your `webapp` project for this session.
+By choosing '1', Memory Bank will then use the Memory Bank from your `webapp` project for this session.
 
-By selecting '1', you ensure that Roo Code uses the Memory Bank from your `webapp` project for this session.
+By selecting '1', you ensure that Memory Bank uses the Memory Bank from your `webapp` project for this session.
 
 
 Organizing Multi-Project Workspaces:
@@ -455,15 +455,15 @@ To effectively manage multiple projects with Memory Banks:
 * Clear Project Names: Use descriptive names for your project directories to easily identify them in the project selection prompt.
 * Workspace Structure: Organize your workspace so that project directories are clearly separated.
 
-This automatic project detection and selection feature simplifies working with multiple projects and ensures Roo Code always has the correct project context for each session.
+This automatic project detection and selection feature simplifies working with multiple projects and ensures Memory Bank always has the correct project context for each session.
 
 
 Automatic Project Detection and Selection:
 
 
-1. New Chat Session: When you start a new chat session in Architect or Code mode, Roo Code scans your workspace for `memory-bank/` directories.
-2. Multiple Memory Banks Found: If multiple `memory-bank/` directories are detected, Roo Code will display a prompt in the chat asking you to choose the project you want to work on.
-3. Project Selection Prompt: Roo Code will display a prompt asking you to choose your project.  It will look something like this in the chat:
+1. New Chat Session: When you start a new chat session in Architect or Code mode, Memory Bank scans your workspace for `memory-bank/` directories.
+2. Multiple Memory Banks Found: If multiple `memory-bank/` directories are detected, Memory Bank will display a prompt in the chat asking you to choose the project you want to work on.
+3. Project Selection Prompt: Memory Bank will display a prompt asking you to choose your project.  It will look something like this in the chat:
 
 ```text
 Multiple Memory Banks detected.
@@ -477,13 +477,13 @@ Please select the project for this session:
 Enter the number of your project choice.
 ```
 4. Select Your Project: Enter the number corresponding to the project you want to work with and press Enter.
-5. Context Loaded: Roo Code will then load the Memory Bank for the selected project and use it for the current chat session.
+5. Context Loaded: Memory Bank will then load the Memory Bank for the selected project and use it for the current chat session.
 
 Example Scenario: Multi-Project Workspace
 
 Let's say you have a workspace with multiple projects, like `webapp` and `mobile-app`, each with its own `memory-bank/` directory.
 
-When you initiate a new chat in Architect mode, Roo Code will detect both Memory Banks and ask you to select the project you want to focus on for this session. The prompt will look similar to the example below:
+When you initiate a new chat in Architect mode, Memory Bank will detect both Memory Banks and ask you to select the project you want to focus on for this session. The prompt will look similar to the example below:
 
 ```text
 Multiple Memory Banks detected.
@@ -495,9 +495,9 @@ Please select the project for this session:
 
 Enter the number of your project choice.
 ```
-By choosing '1', Roo Code will then use the Memory Bank from your `webapp` project for this session.
+By choosing '1', Memory Bank will then use the Memory Bank from your `webapp` project for this session.
 
-By selecting '1', you ensure that Roo Code uses the Memory Bank from your `webapp` project for this session.
+By selecting '1', you ensure that Memory Bank uses the Memory Bank from your `webapp` project for this session.
 
 
 Organizing Multi-Project Workspaces:
@@ -509,7 +509,7 @@ To effectively manage multiple projects with Memory Banks:
 * Clear Project Names: Use descriptive names for your project directories to easily identify them in the project selection prompt.
 * Workspace Structure: Organize your workspace so that project directories are clearly separated.
 
-This automatic project detection and selection feature simplifies working with multiple projects and ensures Roo Code always has the correct project context for each session.
+This automatic project detection and selection feature simplifies working with multiple projects and ensures Memory Bank always has the correct project context for each session.
 
 Example Memory Bank Updates:
 
@@ -700,7 +700,7 @@ Memory Bank Not Persisting After VS Code Restart
 
 
 Solution:
-1. Verify Memory Bank Initialization: Confirm that you have initiated the Memory Bank initialization process by switching to Architect mode in a new project (see "Getting Started" section). Check if the `memory-bank/` folder and essential files were created at the project root after following the initialization plan provided by Roo Code in Architect mode.
+1. Verify Memory Bank Initialization: Confirm that you have initiated the Memory Bank initialization process by switching to Architect mode in a new project (see "Getting Started" section). Check if the `memory-bank/` folder and essential files were created at the project root after following the initialization plan provided by Memory Bank in Architect mode.
 2. Initial Mode Switch: After VS Code restart, switch to "Ask" or "Architect" mode *first* to trigger Memory Bank loading.
 3. Use "Update Memory Bank" (UMB) Command: Use "update memory bank" or **"UMB" as a standalone prompt** at session end to explicitly trigger the comprehensive Memory Bank update and prepare for the next session.
 4. Check File Paths: Verify `memory-bank/` folder is at project root; incorrect paths prevent Memory Bank access.
@@ -713,7 +713,7 @@ Solution:
 1. File Location: Ensure `.clinerules` files (`.clinerules`, `.clinerules-code`, etc.) are at project root, alongside `memory-bank/` folder.
 2. Syntax Check: Verify `.clinerules` file syntax; incorrect syntax may cause rules to be ignored.
 3. Mode Relevance: Note that `.clinerules-code`, `.clinerules-architect`, `.clinerules-ask` are mode-specific.
-4. Restart Roo Code (Rare):  Restart Roo Code in VS Code after major `.clinerules` changes to reload rules.
+4. Restart Memory Bank (Rare):  Restart Memory Bank in VS Code after major `.clinerules` changes to reload rules.
 
 
 Memory Bank Files Not Updating/Saving
@@ -726,7 +726,7 @@ Solution:
 4. Disk Space: Ensure sufficient free disk space is available.
 
 
-If issues persist, consult the Roo Code documentation or community support channels for further assistance.
+If issues persist, consult the Memory Bank documentation or community support channels for further assistance.
 
 
 Revised Guidance on "Update Memory Bank" (UMB) Command:
@@ -750,13 +750,13 @@ Session Management Workflow (`update memory bank` Command)
 3. Step 2: Session End or Break?
  Yes: User initiates `update memory bank` command in chat
  No: Continue Working (Loop back to Step 1)
-4. Step 3: Roo Code saves current state of Memory Bank files
+4. Step 3: Memory Bank saves current state of Memory Bank files
 5. Step 4: Memory Bank is prepared for next session
 6. End: Session Managed & Memory Bank Updated
 
 
 Think of it as:
-* `[MEMORY BANK: ACTIVE]` Prefix:  Ensures Roo uses *documented, reliable* project context in Code mode (important for memory resets).
+* `[MEMORY BANK: ACTIVE]` Prefix:  Ensures Memory Bank uses *documented, reliable* project context in Code mode (important for memory resets).
 * `update memory bank` Command: "Save project knowledge" command. Use it to:
   * Update Memory Bank at session end/breaks.
   * Prepare for VS Code closure/workspace switch.

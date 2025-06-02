@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Roo Code Memory Bank - Cursor Setup Validation Script
+# Memory Bank - Cursor Setup Validation Script
 # Helps troubleshoot Cursor custom modes integration
 
-echo "🔍 Roo Code Memory Bank - Cursor Setup Validation"
+echo "🔍 Memory Bank - Cursor Setup Validation"
 echo "================================================"
 
 errors=0
